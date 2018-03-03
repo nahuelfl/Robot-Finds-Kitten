@@ -147,7 +147,14 @@ public class Grille
 	//Indique si c'est possible pour le robot de marcher sur la cellule de cordonnée (x,y)
 	public boolean deplacementPossible(Robot robot, int x, int y) 
 	{
-		if(this.grille[y][x] instanceof Mur || this.grille[y][x] instanceof Porte)
+		//if(this.grille[y][x] instanceof Mur || (this.grille[y][x] instanceof Porte && robot.getNbCles() <= 0))
+		//	return false;
+		//else
+		//	return true;
+		
+		if(this.grille[y][x] instanceof Mur)
+			return false;
+		if(this.grille[y][x] instanceof Porte && robot.getNbCles() <= 0)
 			return false;
 		else
 			return true;
@@ -181,7 +188,15 @@ public class Grille
 	void interagir(Robot robot)
 	{
 		if(this.grille[robot.getPoint().getY()][robot.getPoint().getX()].interactionPossible(robot))
+		{
 			this.grille[robot.getPoint().getY()][robot.getPoint().getX()].interagir(robot);
+			
+			if(this.grille[robot.getPoint().getY()][robot.getPoint().getX()] instanceof Cle)
+				this.grille[robot.getPoint().getY()][robot.getPoint().getX()] = new EmptyCase();
+			
+			if(this.grille[robot.getPoint().getY()][robot.getPoint().getX()] instanceof Porte)	//Si le robot intéragit avec une porte (nbCles>0), il ouvre la porte e ton l'enlève de la grille
+				this.grille[robot.getPoint().getY()][robot.getPoint().getX()] = new EmptyCase();
+		}
 	}
 	
 	//Setters

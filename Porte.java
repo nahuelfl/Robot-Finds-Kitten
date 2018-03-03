@@ -18,6 +18,9 @@ public class Porte extends Case
 	@Override
 	public void interagir(Robot robot) 
 	{
+		int nbCles = robot.getNbCles();
+		robot.setNbCles(nbCles--);
+		
 		this.representation = ' ';
 	}
 
