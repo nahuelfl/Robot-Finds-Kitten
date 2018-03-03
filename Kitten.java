@@ -18,7 +18,7 @@ public class Kitten extends Case
 	@Override
 	public void interagir(Robot robot) 
 	{
-		String messageFin = "You found kitten! Wat to go, robot. \n" + this.getNomKitten() + " <3 " + robot.getNomRobot();
+		String messageFin = "You found kitten! Way to go, robot. \n" + this.getNomKitten() + " <3 " + robot.getNomRobot();
 		System.out.println(messageFin);
 		
 	}

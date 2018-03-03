@@ -101,12 +101,27 @@ public class Grille
 		}
 		
 		/*Clés*/
-		//Il manque en générer pour chage pièce
 		
-		Point random = randomEmptyCell();
-		int randomX = random.getX();
-		int randomY = random.getY();
-		this.grille[randomY][randomX] = new Cle();
+		for(int i=1; i<this.grille.length; i+=hauteurPiece+1)
+		{
+			for(int j=1; j<this.grille[0].length; j+=largeurPiece+1)
+			{
+				Point random;
+				int randomX;
+				int randomY;
+				
+				do
+				{
+					random = randomEmptyCell();
+					randomX = random.getX();
+					randomY = random.getY();
+				}
+				while( !( (randomY < (i+hauteurPiece+1) && randomY >= i) && (randomX < (j+largeurPiece+1) && randomX >= j) ) );
+				
+				this.grille[randomY][randomX] = new Cle();
+			}
+		}
+		
 		
 		/*Non-Kitten-Items et Téléporteur*/
 		
@@ -147,14 +162,13 @@ public class Grille
 	//Indique si c'est possible pour le robot de marcher sur la cellule de cordonnée (x,y)
 	public boolean deplacementPossible(Robot robot, int x, int y) 
 	{
-		//if(this.grille[y][x] instanceof Mur || (this.grille[y][x] instanceof Porte && robot.getNbCles() <= 0))
-		//	return false;
-		//else
-		//	return true;
 		
 		if(this.grille[y][x] instanceof Mur)
 			return false;
-		if(this.grille[y][x] instanceof Porte && robot.getNbCles() <= 0)
+		
+		int nbCles = robot.getNbCles();
+		
+		if(this.grille[y][x] instanceof Porte && nbCles == 0)
 			return false;
 		else
 			return true;

@@ -11,15 +11,6 @@ import java.util.Scanner;
 
 public class RobotFindsKitten 
 {
-	
-	public static void afficherMessage(String[] message)
-	{
-		for(int i=0; i<message.length; i++)
-		{
-			System.out.println(message[i]);
-		}
-	}
-
 	public static void main(String[] args)
 	{
 		//Message de Bienvenue
@@ -70,7 +61,7 @@ public class RobotFindsKitten
 			statutRobot += "> ";
 			
 			System.out.print(statutRobot);
-			
+		
 			//Input pour le mouvement du robot
 			Scanner scanner = new Scanner(System.in);
 			char input = scanner.next().charAt(0);

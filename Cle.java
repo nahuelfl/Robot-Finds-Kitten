@@ -16,7 +16,7 @@ public class Cle extends Case
 	public void interagir(Robot robot) 
 	{
 		int nbCles = robot.getNbCles();
-		robot.setNbCles(nbCles++);
+		robot.setNbCles(++nbCles);
 	}
 
 }
