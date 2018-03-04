@@ -5,7 +5,6 @@ public class Robot{
     private int cle;
     private boolean teleporteur;
     private boolean searching;
-    private String status;
     
     /**
      * Constructeur 
@@ -81,14 +80,5 @@ public class Robot{
      */
     public boolean searching() {
         return searching;
-    }
-    
-    /**
-     * message affiche a chaque tour sur la console
-     */
-    public void status() {
-        status = nom + " [" + cle + "]";
-        status += (teleporteur) ? "T> " : "> ";
-        System.out.print(status);
     }
 }
