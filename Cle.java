@@ -20,6 +20,6 @@ public class Cle extends Case {
     }
     
     public boolean disparait(){
-        returns true;
+        return true;
     }
 }
