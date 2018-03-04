@@ -64,14 +64,14 @@ public class Robot{
     /**
      * @return true si le robot possede le teleporteur
      */
-    public boolean hasTeleporteur() {
+    public boolean getTeleporteur() {
         return teleporteur;
     }
     
     /**
      * change l'attribut du robot qui indique s'il cherche toujours le kitten
      */
-    public void foundKitten() {
+    public void endSearch() {
         searching = false;
     }
     
