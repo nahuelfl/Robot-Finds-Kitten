@@ -7,7 +7,6 @@ public class Porte extends Case {
      */
     public Porte() {
         this.representation = '!';
-        this.disparait = true;
     }
     
     /*
@@ -26,4 +25,7 @@ public class Porte extends Case {
         robot.setCle(false);
     }
     
+    public boolean disparait() {
+        return true;
+    }
 }
