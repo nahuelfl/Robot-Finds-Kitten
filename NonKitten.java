@@ -9,7 +9,6 @@ public class NonKitten extends Case {
     public NonKitten() {
         this.representation = getRandomSymbole();
         this.message = descriptions[(int) (Math.random() * descriptions.length)];
-        this.disparait = false;
     }
     
     public boolean interactionPossible(Robot robot) {
