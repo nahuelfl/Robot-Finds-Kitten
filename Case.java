@@ -39,9 +39,9 @@ public abstract class Case {
     }
     
     /**
-     * Indique si l'object peut disparaitre apres interaction avec le robot.
+     * Indique si l'objet peut disparaitre apres interaction avec le robot.
      * Seuls les portes, les cles et le teleporteur disparaissent
-     * @return true si l'object peut disparaitre, false sinon.
+     * @return true si l'objet peut disparaitre, false sinon.
      */
     public boolean disparait() {
         return false;
