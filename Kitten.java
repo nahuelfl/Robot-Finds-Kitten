@@ -20,7 +20,7 @@ public class Kitten extends Case {
      * Le jeu se termine en affichant un message lorsque le robot interagit avec kitten.
      */
     public void interagir(Robot robot) {
-        robot.foundKitten();
+        robot.endSearch();
         
         System.out.println("You found kitten! Way to go, Robot.");
         System.out.println(this.nom + " <3 " + robot.getNom());
