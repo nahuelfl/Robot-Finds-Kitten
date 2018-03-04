@@ -5,8 +5,8 @@ public class Grille {
     private int largeurGrille;
     private int hauteurGrille;
     /**
-     * Initialise la grille en créant les pièces, les portes, les murs
-     * les clés et les items (le téléporteur, les NonKittenItems et le Kitten)
+     * Initialise la grille en créant les pièces, les portes, les murs
+     * les clés et les items (le téléporteur, les NonKittenItems et le Kitten)
      * Il y a ‘nbrNonKitten‘ NonKittenItems au total sur tout le jeu
      *
      * @param nbrPiecesX nombre de pieces en largeur
@@ -95,7 +95,7 @@ public class Grille {
     
     
     /**
-     * Retourne une coordonnée de cellule qui ne contient rien
+     * Retourne une coordonnée de cellule qui ne contient rien
      *
      * @return un point innoccupe sur la grille
      */
@@ -111,7 +111,7 @@ public class Grille {
     
     /**
      * Indique si c’est possible pour le robot de marcher sur la
-     * cellule de coordonnée (x, y)
+     * cellule de coordonnée (x, y)
      *
      * @param robot Le robot
      * @param position en x ou le robot voudrait se deplacer
@@ -132,13 +132,10 @@ public class Grille {
     
     /**
      *
-     * Affiche la grille dans la console à coups de System.out.println(...)
+     * Affiche la grille dans la console à coups de System.out.println(...)
      * @param robot Le robot qui se trouve sur la grille(represente par '#')
      */
     public void afficher(Robot robot) {
-
-        int robotX = robot.getPos().getX();
-        int robotY = robot.getPos().getY();
             
         String ligne;
         
@@ -147,7 +144,7 @@ public class Grille {
             
             for (int m=0; m<largeurGrille; m++) {
                 
-                if (l == robotY && m == robotX) {
+                if (l == robot.getPos().getY() && m == robot.getPos().getX()) {
                     ligne += "#";
                 }
                 else {
@@ -162,8 +159,8 @@ public class Grille {
     /**
      * Lance l’interaction entre le Robot robot et la case de la grille sur
      * laquelle il se trouve
-     * L’"interaction" peut être l’affichage d’un message (pour les NonKittenItems),
-     * l’ouverture d’une Porte, le fait de ramasser une clé ou un téléporteur, ou encore
+     * L’"interaction" peut être l’affichage d’un message (pour les NonKittenItems),
+     * l’ouverture d’une Porte, le fait de ramasser une clé ou un téléporteur, ou encore
      * le fait de gagner la partie en trouvant le Kitten
      *
      * @param robot Le robot qui interagirait avec la case
