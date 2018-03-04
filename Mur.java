@@ -4,7 +4,6 @@ public class Mur extends Case {
      */
     public Mur() {
         this.representation = '%';
-        this.disparait = false;
     }
     
     public boolean interactionPossible(Robot robot) {
