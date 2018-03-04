@@ -5,7 +5,6 @@ public class Teleporteur extends Case {
      */
     public Teleporteur() {
         this.representation = 'T';
-        this.disparait = true;
     }
     
     public boolean interactionPossible(Robot robot) {
@@ -18,5 +17,9 @@ public class Teleporteur extends Case {
      */
     public void interagir(Robot robot) {
         robot.setTeleporteur();
+    }
+    
+    public boolean disparait(){
+        return true;
     }
 }
