@@ -1,7 +1,6 @@
 public abstract class Case {
     
     protected char representation;
-    protected boolean disparait;
     
     /**
      * @return la representation de la classe
@@ -14,7 +13,7 @@ public abstract class Case {
      * Indique si une interaction entre la case et le robot est
      * possible (ex.: le robot peut interagir avec un NonKittenItem
      * en tout temps, mais ne peut pas interagir avec un mur, le robot
-     * peut interagir avec une porte seulement s’il possède une clé,
+     * peut interagir avec une porte seulement s’il possède une clé,
      * etc.)
      *
      * @param robot Le robot qui interagirait avec la case
@@ -30,7 +29,7 @@ public abstract class Case {
     
     
     /**
-     * Génère un symbole aléatoire
+     * Génère un symbole aléatoire
      *
      * @return Un symbole ASCII compris entre ’:’ et ’~’ a part le 'T' reserve pour le teleporteur
      */
@@ -41,11 +40,11 @@ public abstract class Case {
     
     /**
      * Indique si l'object peut disparaitre apres interaction avec le robot.
-     *
+     * Seuls les portes, les cles et le teleporteur disparaissent
      * @return true si l'object peut disparaitre, false sinon.
      */
     public boolean disparait() {
-        return disparait;
+        return false;
     }
     
 }
