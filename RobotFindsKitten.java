@@ -21,7 +21,17 @@ public class RobotFindsKitten {
         while(robot.searching()) {
             
             grille.afficher(robot);
-            robot.status();
+            
+            //Statut du robot
+			String statutRobot = robot.getNomRobot() + " [" + robot.getNbCles() + "]";
+			
+			if(robot.getTeleporteur() == true)
+				statutRobot += "T";
+			
+			statutRobot += "> ";
+			
+			System.out.print(statutRobot);
+           
             
             x = robot.getPos().getX();
             y = robot.getPos().getY();
