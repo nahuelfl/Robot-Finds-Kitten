@@ -9,7 +9,6 @@ public class Kitten extends Case {
     public Kitten() {
         this.representation = getRandomSymbole();
         this.nom = noms[(int) (Math.random() * noms.length)];
-        this.disparait = false;
     }
     
     public boolean interactionPossible(Robot robot) {
