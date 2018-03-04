@@ -1,6 +1,11 @@
 
 public class NonKitten extends Case
 {
+	/**
+	 * Constructeur du NonKitten
+	 * 
+	 * @param representation, caractère réprésentant le NonKitten (choisi aléatoirement)
+	 */
 	public NonKitten(char representation)
 	{
 		this.representation = representation;
@@ -21,6 +26,9 @@ public class NonKitten extends Case
 		System.out.println(descriptions[random]);
 	}
 	
+	/**
+	 * Tableau de Strings contenant des descriptions de NonKittens
+	 */
 	public static String[] descriptions = new String[]{
 	        "I pity the fool who mistakes me for kitten!\", sez Mr. T.",
 	        "That's just an old tin can.",

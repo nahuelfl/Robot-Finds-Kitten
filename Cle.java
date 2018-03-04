@@ -1,6 +1,9 @@
 
 public class Cle extends Case
 {
+	/**
+	 * Constructeur de Cle
+	 */
 	public Cle()
 	{
 		this.representation = '\'';

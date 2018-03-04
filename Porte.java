@@ -1,6 +1,10 @@
 
 public class Porte extends Case
 {
+	/**
+	 * Constructeur de la Porte, la réprésentation d'une porte est toujours '!' 
+	 * 
+	 */
 	public Porte()
 	{
 		this.representation = '!';
@@ -18,10 +22,10 @@ public class Porte extends Case
 	@Override
 	public void interagir(Robot robot) 
 	{
-		int nbCles = robot.getNbCles();
+		int nbCles = robot.getNbCles();	//Le nombre de clés du robot est diminué de 1
 		robot.setNbCles(--nbCles);
 		
-		this.representation = ' ';
+		//La Porte est enlevé de la grille et remplacé par une EmptyCase (dans la classe Grille)
 	}
 
 }

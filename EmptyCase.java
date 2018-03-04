@@ -1,6 +1,9 @@
 
 public class EmptyCase extends Case
 {
+	/**
+	 * Constructeur du EmptyCase la réprésentation d'une EmptyCase est toujours ' ' 
+	 */
 	public EmptyCase()
 	{
 		this.representation = ' ';
@@ -15,7 +18,6 @@ public class EmptyCase extends Case
 	@Override
 	public void interagir(Robot robot) 
 	{
-		// TODO Auto-generated method stub
-		
+		//Aucune interaction
 	}
 }

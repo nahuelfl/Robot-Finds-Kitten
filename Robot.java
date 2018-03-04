@@ -17,7 +17,14 @@ public class Robot
 	private int nbCles;
 	private boolean teleporteur;
 	
-	//Constructeur
+	/**
+	 * Constructeur du Robot
+	 * 
+	 * @param nomRobot, le nom du robot
+	 * @param point, le point du robot Point(int x, int y) correspondant à sa position
+	 * @param nbCles, le nombre de clés que possède le robot (int)
+	 * @param teleporteur, booléen indiquant si le robot possède ou non le téléporteur
+	 */
 	public Robot (String nomRobot, Point point, int nbCles, boolean teleporteur)
 	{
 		this.nomRobot = nomRobot;

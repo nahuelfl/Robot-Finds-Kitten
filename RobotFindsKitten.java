@@ -11,6 +11,11 @@ import java.util.Scanner;
 
 public class RobotFindsKitten 
 {
+	/**
+	 * Fonction principale (main) qui contient la logique de base du jeu
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		//Message de Bienvenue
@@ -20,33 +25,36 @@ public class RobotFindsKitten
 	
 		/* INITIALISATION DU JEU*/
 		
-		//Robot
+		//Attributs du robot
 		String nomRobot = "R.O.B.";
 		Point point = new Point(1,1);
 		int nbCles = 0;
 		boolean teleporteur = false;
 		
+		//Instanciation du robot
 		Robot robot = new Robot(nomRobot, point, nbCles, teleporteur);		
 		
-		//Grille
+		//Attributs de la grille
 		int nbrPiecesX = 5;
 		int nbrPiecesY = 2;
 		int largeurPiece = 11;
 		int hauteurPiece = 5;
 		int nbrNonKitten = 10;
 		
+		//Instanciation de la grille
 		Grille grille = new Grille(nbrPiecesX, nbrPiecesY, largeurPiece, hauteurPiece, nbrNonKitten);
 
-		//Kitten
-		
+		//Attributs du kitten
 		Kitten kitten = new Kitten(Case.getRandomSymbole(),"Caramel");
-		Point random3 = grille.randomEmptyCell();
-		int random3X = random3.getX();
-		int random3Y = random3.getY();
-		grille.setGrille(random3X, random3Y, kitten);
+		Point randomKittenPoint = grille.randomEmptyCell();
+		int randomKittenX = randomKittenPoint.getX();
+		int randomKittenY = randomKittenPoint.getY();
+		
+		//Instanciation du kitten
+		grille.setGrille(randomKittenX, randomKittenY, kitten);
 		
 		
-		/* GAMEPLAY */
+		//Déroulement du jeu
 		do
 		{
 			//Affichage du jeu
@@ -59,13 +67,13 @@ public class RobotFindsKitten
 				statutRobot += "T";
 			
 			statutRobot += "> ";
-			
 			System.out.print(statutRobot);
 		
 			//Input pour le mouvement du robot
 			Scanner scanner = new Scanner(System.in);
-			char input = scanner.next().charAt(0);
-			
+			String inputString = scanner.next().toUpperCase();
+			char input = inputString.charAt(0);
+
 			System.out.println(" ");
 			
 			int posRobotX = robot.getPoint().getX();
@@ -84,7 +92,7 @@ public class RobotFindsKitten
 				case 'd': posRobotX++; break;	//D
 			}
 			
-			//Teleportation
+			//Teleportation (Analyse de touche (T))
 			if(input == 't' || input == 'T')
 			{
 				if(robot.getTeleporteur())
@@ -93,15 +101,16 @@ public class RobotFindsKitten
 				}
 			}
 			
+			//Déplacement du robot (si le déplacement est valide)
 			if(grille.deplacementPossible(robot, posRobotX, posRobotY))
 				robot.setPoint(new Point(posRobotX, posRobotY));
 			
-			//Interaction
+			//Interaction (si possible)
 			grille.interagir(robot);
 		}
-		while(!robot.getPoint().egal(random3X, random3Y));	//Tant que Robot find pas Kitten 
+		while(!robot.getPoint().egal(randomKittenX, randomKittenY));	//Tant que Robot trouve pas Kitten 
 		
-		//Fin du jeu lorsque Kitten est trouvé
+		//Le jeu fini lorsque robot trouve kitten, dans tel cas leur intéraction affiche le message de fin du jeu.
 	}
 
 }

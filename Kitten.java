@@ -3,6 +3,12 @@ public class Kitten extends Case
 {
 	private String nomKitten;
 	
+	/**
+	 * Constructeur du Kitten
+	 * 
+	 * @param representation, caractère réprésentant le Kitten 
+	 * @param nomKitten, nom du Kitten
+	 */
 	public Kitten(char representation, String nomKitten)
 	{
 		this.representation = representation;
@@ -18,6 +24,7 @@ public class Kitten extends Case
 	@Override
 	public void interagir(Robot robot) 
 	{
+		//Le message de fin de jeu est affiché, puis le jeu se termine
 		String messageFin = "You found kitten! Way to go, robot. \n" + this.getNomKitten() + " <3 " + robot.getNomRobot();
 		System.out.println(messageFin);
 		

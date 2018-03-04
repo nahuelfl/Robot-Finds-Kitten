@@ -1,6 +1,11 @@
 
 public class Teleporteur extends Case
 {
+	/**
+	 * Constructeur du Teleporteur
+	 * 
+	 * @param representation, caractère réprésentant le Teleporteur (choisi aléatoirement)
+	 */
 	public Teleporteur(char representation)
 	{
 		this.representation = representation;
@@ -15,8 +20,8 @@ public class Teleporteur extends Case
 	@Override
 	public void interagir(Robot robot) 
 	{
-		// TODO Auto-generated method stub
-		
+		//Le robot possède maintenant un téléporteur
+		robot.setTeleporteur(true);
 	}
 
 }

@@ -1,6 +1,10 @@
 
 public class Mur extends Case 
 {
+	/**
+	 * Constructeur du Mur, la réprésentation d'un mur est toujours '%' 
+	 * 
+	 */
 	public Mur()
 	{
 		this.representation = '%';
@@ -15,8 +19,7 @@ public class Mur extends Case
 	@Override
 	public void interagir(Robot robot) 
 	{
-		// TODO Auto-generated method stub
-		
+		//Aucune interaction
 	}
 
 }
