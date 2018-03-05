@@ -9,7 +9,7 @@ public class RobotFindsKitten {
      */
     public static void main(String[] args) {
         
-        System.out.println("       Bienvenue dans RobotFindsKitten\n Super Dungeon Master 3000 Ultra Turbo Edition !");
+        System.out.println("\t Bienvenue dans RobotFindsKitten\n Super Dungeon Master 3000 Ultra Turbo Edition !");
         Grille grille = new Grille(5, 2, 11, 5, 50);
         Robot robot = new Robot("R.O.B.", grille.randomEmptyCell());
         String statutRobot;
