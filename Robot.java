@@ -41,7 +41,7 @@ public class Robot{
     }
     
     /**
-     * @param increment vaut true pour l'obtention et false pour l'usage d'une cle
+     * @param cle nouveau nombre de cle 
      */
     public void setCle(int cle) {
         this.cle = cle; 
