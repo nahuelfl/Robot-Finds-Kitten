@@ -24,7 +24,7 @@ public class RobotFindsKitten {
             
             //Statut du robot
 	    statutRobot = robot.getNom() + " [" + robot.getCle() + "]";
-	    statusRobot += (robot.getTeleporteur()) ? "T> " : "> ";
+	    statutRobot += (robot.getTeleporteur()) ? "T> " : "> ";
 			
 	    System.out.print(statutRobot);
            
