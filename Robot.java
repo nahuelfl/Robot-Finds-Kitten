@@ -5,7 +5,6 @@ public class Robot{
     private int cle;
     private boolean teleporteur;
     private boolean searching;
-    private String status;
     
     /**
      * Constructeur 
@@ -65,14 +64,14 @@ public class Robot{
     /**
      * @return true si le robot possede le teleporteur
      */
-    public boolean hasTeleporteur() {
+    public boolean getTeleporteur() {
         return teleporteur;
     }
     
     /**
      * change l'attribut du robot qui indique s'il cherche toujours le kitten
      */
-    public void foundKitten() {
+    public void endSearch() {
         searching = false;
     }
     
@@ -81,14 +80,5 @@ public class Robot{
      */
     public boolean searching() {
         return searching;
-    }
-    
-    /**
-     * message affiche a chaque tour sur la console
-     */
-    public void status() {
-        status = nom + " [" + cle + "]";
-        status += (teleporteur) ? "T> " : "> ";
-        System.out.print(status);
     }
 }
