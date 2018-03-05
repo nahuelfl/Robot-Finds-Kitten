@@ -16,7 +16,7 @@ public class Cle extends Case {
      * le robot a une cle de plus lorsqu'il en trouve une.
      */
     public void interagir(Robot robot) {
-        robot.setCle(true);
+        robot.setCle(robot.getCle()+1);
     }
     
     public boolean disparait(){
