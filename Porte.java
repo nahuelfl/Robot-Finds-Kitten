@@ -22,7 +22,7 @@ public class Porte extends Case {
      * @param robot Le robot qui ouvrirait la porte.
      */
     public void interagir(Robot robot) {
-        robot.setCle(false);
+        robot.setCle(robot.getCle()-1);
     }
     
     public boolean disparait() {
