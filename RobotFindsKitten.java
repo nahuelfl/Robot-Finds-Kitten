@@ -12,21 +12,29 @@ public class RobotFindsKitten {
         System.out.println("\t Bienvenue dans RobotFindsKitten\n Super Dungeon Master 3000 Ultra Turbo Edition !");
         Grille grille = new Grille(5, 2, 11, 5, 50);
         Robot robot = new Robot("R.O.B.", grille.randomEmptyCell());
+	    
+		Point kittenPos = grille.randomEmptyCell();
+		int kittenX = kittenPos.getX();
+        int kittenY = kittenPos.getY();
+		
+        grille.setCell(kittenPos, new Kitten());
+		
         String statutRobot;
+	    
         Scanner scan = new Scanner(System.in);
         char move;
         int x;
         int y;
         
-        while(robot.searching()) {
+        do {
             
             grille.afficher(robot);
             
             //Statut du robot
-	    statutRobot = robot.getNom() + " [" + robot.getCle() + "]";
-	    statutRobot += (robot.getTeleporteur()) ? "T> " : "> ";
+	  	  	statutRobot = robot.getNom() + " [" + robot.getCle() + "]";
+	   		statutRobot += (robot.getTeleporteur()) ? "T> " : "> ";
 			
-	    System.out.print(statutRobot);
+	    	System.out.print(statutRobot);
            
             
             x = robot.getPos().getX();
@@ -59,6 +67,7 @@ public class RobotFindsKitten {
             }
             
             grille.interagir(robot);
-        }
+			
+        } while (!robot.getPos().egal(kittenX, kittenY));
     }
 }

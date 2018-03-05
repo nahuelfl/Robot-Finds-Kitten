@@ -4,7 +4,6 @@ public class Robot{
     private Point pos;
     private int cle;
     private boolean teleporteur;
-    private boolean searching;
     
     /**
      * Constructeur 
@@ -16,7 +15,6 @@ public class Robot{
         this.pos = pos;
         this.cle = 0;
         this.teleporteur = false;
-        this.searching = true;
     }
     
     /**
@@ -67,18 +65,5 @@ public class Robot{
     public boolean getTeleporteur() {
         return teleporteur;
     }
-    
-    /**
-     * change l'attribut du robot qui indique s'il cherche toujours le kitten
-     */
-    public void endSearch() {
-        searching = false;
-    }
-    
-    /**
-     * @return true tant que le robot cherche le kitten
-     */
-    public boolean searching() {
-        return searching;
-    }
+
 }

@@ -54,7 +54,7 @@ public class Grille {
             }
         }
         
-        //creation des cles, kitten, teleporteur et nonKitten items
+        //creation des cles, teleporteur et nonKitten items
         
         //placer une cle par piece 
         Point pointCle;
@@ -70,30 +70,30 @@ public class Grille {
             numeroPiece = pointCle.getX() / (largeurPiece + 1) + (pointCle.getY() / (hauteurPiece + 1)) * nbrPiecesX;
             
             if (!pieces[numeroPiece]) { 
-                grille[pointCle.getY()][pointCle.getX()] = new Cle();
+                setCell(pointCle, new Cle());
                 pieces[numeroPiece] = true;
                 piecesSansCle--;
             }
         }
         
-        //placer un kitten
-        Point kittenPoint = randomEmptyCell();
-        grille[kittenPoint.getY()][kittenPoint.getX()] = new Kitten();
-        
         //placer un teleporteur
-        
-        Point teleporteurPoint = randomEmptyCell();
-        grille[teleporteurPoint.getY()][teleporteurPoint.getX()] = new Teleporteur();
+        setCell(randomEmptyCell(), new Teleporteur());
         
         //placer les nonKitten items
-        Point nonKittenPoint;
         for (int k=0; k<nbrNonKitten; k++){
-            nonKittenPoint = randomEmptyCell();
-            grille[nonKittenPoint.getY()][nonKittenPoint.getX()] = new NonKitten();
+            setCell(randomEmptyCell(), new NonKitten());
         }
     }
     
-    
+    /**
+     * Sert a placer une Case sur la grille
+     *
+     * @param pos le point dans la grille ou on place un item
+     * @param c l'item a placer
+     */
+    public void setCell(Point pos, Case c){
+        grille[pos.getY()][pos.getX()] = c;
+    }
     /**
      * Retourne une coordonnée de cellule qui ne contient rien
      *
