@@ -20,6 +20,7 @@ public class RobotFindsKitten {
         grille.setCell(kittenPos, new Kitten());
 		
         String statutRobot;
+	    
         Scanner scan = new Scanner(System.in);
         char move;
         int x;
